@@ -20,6 +20,7 @@ export async function run() {
       await execShellCommand(optionalSudoPrefix + 'apt-get install -y openssh-client');
       await execShellCommand(optionalSudoPrefix + 'wget https://github.com/tmate-io/tmate/releases/download/2.4.0/tmate-2.4.0-static-linux-amd64.tar.xz');
       await execShellCommand(optionalSudoPrefix + 'tar -xvf tmate-2.4.0-static-linux-amd64.tar.xz');
+      await execShellCommand(optionalSudoPrefix + 'chmod +x tmate-2.4.0-static-linux-amd64/tmate');
       await execShellCommand(optionalSudoPrefix + 'mv tmate-2.4.0-static-linux-amd64/tmate /usr/bin/tmate');
     }
     core.debug("Installed dependencies successfully");
